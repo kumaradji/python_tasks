@@ -7,7 +7,6 @@ def draw_board(board):
         print("|", board[0 + i * 3], "|", board[1 + i * 3], "|", board[2 + i * 3], "|")
         print("-" * 13)
 
-
 def take_input(player_token):
     valid = False
     while not valid:
