@@ -43,5 +43,44 @@
 
 # def accum(s):
 #     return '-'.join(c.upper() + c.lower() * i for i, c in enumerate(s))
+# number = 86543.43
+#
+#
+# def opposite(number):
+#     # return number + abs(number) * 2 if number < 0 else number - number * 2
+#     return number - number * 2
+#
+# print(opposite(number))
+# a = "45385593107843568"
+#
+#
+# def fake_bin(x):
+#     sss = x
+#     res = ""
+#     for i in sss:
+#         if int(i) >= 5:
+#             res += "1"
+#         if int(i) < 5:
+#             res += "0"
+#     return res
+#
+#
+# print(fake_bin(a))
+#
+#
+# def fake_bin(x):
+#     return ''.join('0' if c < '5' else '1' for c in x)
+
+def sum_mix(arr):
+    for x in arr:
+        res = []
+        i = 0
+        x = int(x)
+        y = x[i] + x[i + 1]
+        i += 1
+    return res.append(y)
+
+
+print(sum_mix(arr))
 
 
