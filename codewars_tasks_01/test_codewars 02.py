@@ -239,26 +239,56 @@
 #
 # def count(string):
 #     return Counter(string)
-'''Write function bmi that calculates 
-body mass index (bmi = weight / height2).
+# '''Write function bmi that calculates
+# body mass index (bmi = weight / height2).
+#
+# if bmi <= 18.5 return "Underweight"
+# if bmi <= 25.0 return "Normal"
+# if bmi <= 30.0 return "Overweight"
+# if bmi > 30 return "Obese"
+# '''
+#
+#
+# def bmi(weight, height):
+#     bmi = float(weight / (height ** 2))
+#     if bmi <= 18.5:
+#         return "Underweight"
+#     elif bmi <= 25.0:
+#         return "Normal"
+#     elif bmi <= 30.0:
+#         return "Overweight"
+#     elif bmi > 30:
+#         return "Obese"
+#
+#
+# print(bmi(90, 1.80))
+#
+#
+# month = 12
+#
+#
+# def quarter_of(month):
+#     # your code here
+#     if month in range(1, 4):
+#         return 1
+#     elif month in range(4, 7):
+#         return 2
+#     elif month in range(7, 10):
+#         return 3
+#     elif month in range(10, 13):
+#         return 4
+#
+#
+# print(quarter_of(month))
+#
+# '''В этом ката от вас требуется, получив строку,
+# заменить каждую букву на ее позицию в алфавите.
+# Если что-то в тексте не является буквой,
+# проигнорируйте это и не возвращайте.
+# '''
+#
+# def alphabet_position(text):
+#     alp = "abcdefghijklmnopqrstuvwxyz"
+#     return " ".join([str(alp.find(c) + 1) for c in text.lower() if c in alp])
 
-if bmi <= 18.5 return "Underweight"
-if bmi <= 25.0 return "Normal"
-if bmi <= 30.0 return "Overweight"
-if bmi > 30 return "Obese"
-'''
 
-
-def bmi(weight, height):
-    bmi = float(weight / (height ** 2))
-    if bmi <= 18.5:
-        return "Underweight"
-    elif bmi <= 25.0:
-        return "Normal"
-    elif bmi <= 30.0:
-        return "Overweight"
-    elif bmi > 30:
-        return "Obese"
-
-
-print(bmi(90, 1.80))

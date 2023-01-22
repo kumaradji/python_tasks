@@ -9,6 +9,13 @@ def greet():
     print("  y - номер столбца  ")
 
 
+field = [
+    [" ", " ", " "],
+    [" ", " ", " "],
+    [" ", " ", " "]
+]
+
+
 def show():  # функция заполнения поля
     print()
     print("    | 0 | 1 | 2 | ")  # выводим координаты столбцов
@@ -67,11 +74,12 @@ def check_win():
     return False
 
 
-field = [
-    [" ", " ", " "],
-    [" ", " ", " "],
-    [" ", " ", " "]
-]
+#
+# field = [
+#     [" ", " ", " "],
+#     [" ", " ", " "],
+#     [" ", " ", " "]
+# ]
 
 count = 0
 while True:
@@ -97,3 +105,8 @@ while True:
     if count == 9:
         print("НИЧЬЯ")
         break
+
+    if check_win():
+        turn = 0
+        field = [[' '] * 3 for i in range(3)]
+        replay()
