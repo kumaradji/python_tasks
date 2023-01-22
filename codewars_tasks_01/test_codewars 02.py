@@ -78,7 +78,7 @@
 #
 # '''
 #
-# sequence = "AAAABBBCCDAABBB"
+# iterable= "AAAABBBCCDAABBB"
 #
 #
 # def unique_in_order(sequence):
@@ -97,7 +97,7 @@
 #     return res
 #
 #
-# print(unique_in_order(sequence))
+# print(unique_in_order(iterable))
 
 
 # '''Завершите функцию так, чтобы она нашла среднее значение
@@ -171,3 +171,94 @@
 #
 #
 # print(likes(names))
+
+# '''
+# Завершите решение так, чтобы функция разбила
+# верблюжью оболочку, используя пробел между словами.
+# '''
+# s = "camelCase"
+# def solution(s):
+#     return "".join([" " + c if c.isupper() else c for c in s])
+#
+# print(solution(s))
+#
+# '''
+# Возьмите 2 строки s1 и s2, включающие только буквы от a до z.
+# Возвращает новую отсортированную строку, максимально длинную,
+# содержащую различные буквы - каждая из которых
+# берется только один раз - исходящие из s1 или s2.
+# '''
+# a1 = "xyaabbbccccdefww"
+# a2 = "xxxxyyyyabklmopq"
+#
+#
+# def longest(a1, a2):
+#     res = []
+#     iterable = a1 + a2
+#     for item in iterable:
+#         if len(res) == 0 or item != res[-1]:
+#             res.append(item)
+#             s = set(res)
+#     return "".join(sorted(s))
+#
+#
+# print(longest(a1, a2))
+#
+# def longest(a1, a2):
+#     return "".join(sorted(set(a1 + a2)))
+
+# a = map(int, input().split())
+# lst = list(map(abs, a))
+#
+# print(*lst)
+
+
+'''Основная идея состоит в том, чтобы подсчитать все
+встречающиеся символы в строке. Если у вас есть строка,
+подобная aba, то результатом
+должно быть {'a': 2, 'b': 1}.,,
+Что делать, если строка пуста?
+Тогда результатом должен быть
+пустой объектный литерал, {}.
+'''
+#
+# string = 'aba'
+#
+#
+# def count(string):
+#     d = dict.fromkeys(string, 0)
+#     for c in string:
+#         d[c] += 1
+#
+#     return d
+#
+#
+# print(count(string))
+#
+# from collections import Counter
+#
+# def count(string):
+#     return Counter(string)
+'''Write function bmi that calculates 
+body mass index (bmi = weight / height2).
+
+if bmi <= 18.5 return "Underweight"
+if bmi <= 25.0 return "Normal"
+if bmi <= 30.0 return "Overweight"
+if bmi > 30 return "Obese"
+'''
+
+
+def bmi(weight, height):
+    bmi = float(weight / (height ** 2))
+    if bmi <= 18.5:
+        return "Underweight"
+    elif bmi <= 25.0:
+        return "Normal"
+    elif bmi <= 30.0:
+        return "Overweight"
+    elif bmi > 30:
+        return "Obese"
+
+
+print(bmi(90, 1.80))
