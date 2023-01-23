@@ -9,15 +9,16 @@ def greet():
     print("  y - номер столбца  ")
 
 
+greet()
 field = [[' '] * 3 for i in range(3)]
 
 
-def show():  # функция заполнения поля
+def show():
     print()
-    print("    | 0 | 1 | 2 | ")  # выводим координаты столбцов
+    print("    | 0 | 1 | 2 | ")
     print(" ---------------- ")
     for i, row in enumerate(field):
-        row_str = f"  {i} | {' | '.join(row)} | "  # объединяем строчку
+        row_str = f"  {i} | {' | '.join(row)} | "
         print(row_str)
         print(" ---------------- ")
     print()
