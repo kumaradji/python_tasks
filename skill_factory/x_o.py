@@ -74,14 +74,10 @@ def check_win():
     return False
 
 
-#
-# field = [
-#     [" ", " ", " "],
-#     [" ", " ", " "],
-#     [" ", " ", " "]
-# ]
+field = [[' '] * 3 for i in range(3)]
 
 count = 0
+
 while True:
     count += 1
 
@@ -109,4 +105,4 @@ while True:
     if check_win():
         turn = 0
         field = [[' '] * 3 for i in range(3)]
-        replay()
+        replay
