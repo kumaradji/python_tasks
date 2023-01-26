@@ -26,7 +26,7 @@ def show():
 
 def ask():
     while True:
-        cords = input("        Ваш ход:  ").split()
+        cords = input("       Ваш ход:  ").split()
 
         if len(cords) != 2:
             print("  Введите две координаты!   ")
