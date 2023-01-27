@@ -343,12 +343,44 @@
 ''' 8 11 -5 -2 8 11 -5
 '''
 
-a = list(map(int, input().split()))
-c = tuple(a)
-b = []
-for x in c:
-    if x not in b:
-        b.append(x)
-        b.index(x)
 
-print(*b)
+#
+# a = list(map(int, input().split()))
+# c = tuple(a)
+# b = []
+# for x in c:
+#     if x not in b:
+#         b.append(x)
+#         b.index(x)
+#
+# print(*b)
+# '''
+# 5 4 -3 2 4 5 10 11
+# '''
+# s = tuple(input().split())
+#
+# print(*tuple(i for i, v in enumerate(s) if s.count(v) > 1))
+# '''
+# setAlarm(true, true) -> false
+# setAlarm(false, true) -> false
+# setAlarm(false, false) -> false
+# setAlarm(true, false) -> true
+# '''
+#
+# def set_alarm(employed, vacation):
+#     return employed and not vacation # лучший ответ
+# def set_alarm(employed, vacation):
+#     setAlarm = False
+#     a = (employed == False and vacation == False)
+#     b = (employed == True and vacation == True)
+#     c = (employed == False and vacation == True)
+#     if (employed == True and vacation == False):
+#         return True
+#     elif a or b or c:
+#         return setAlarm
+#
+#
+# print(set_alarm(True, True))
+# print(set_alarm(False, True))
+# print(set_alarm(False, False))
+# print(set_alarm(True, False))
