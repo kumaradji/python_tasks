@@ -1,0 +1,25 @@
+class Cat:
+    def __init__(self, name, gender, age):
+        self.name = name
+        self.gender = gender
+        self.age = age
+
+    def get_cat(self):
+        return self.name
+        return self.gender
+        return self.age
+
+    def get_area(self):
+        return self.width * self.height
+      
+c1 = Cat()
+
+from cats import Cat
+
+c2 = Cat(10, 5)
+
+print("c1.name =", c1.name)
+print("c1.gender =", c1.gender)
+print("c1.get_name =", c1.get_name())
+print("c1.get_age =", c1.get_age())
+print("c1.get_gender =", c1.get_gender())
