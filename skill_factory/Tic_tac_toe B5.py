@@ -24,6 +24,14 @@ def show():
     print()
 
 
+def replay():
+    print(" ---------------- ")
+    print("Сыграем ещё разок?")
+    print(" ---------------- ")
+    # надо обнулить поле
+    return ask()
+
+
 def ask():
     while True:
         cords = input("       Ваш ход:  ").split()
@@ -46,6 +54,7 @@ def ask():
 
         if field[x][y] != " ":
             print("  Клетка занята!  ")
+            continue
 
         return x, y
 
@@ -62,11 +71,11 @@ def check_win():
             symbols.append(field[c[0]][c[1]])
         if symbols == ["X", "X", "X"]:
             print("Выиграл X !!!")
-            return True
+            return replay()
 
         if symbols == ["0", "0", "0"]:
             print("Выиграл 0 !!!")
-            return True
+            return replay()
 
     return False
 
@@ -95,9 +104,10 @@ while True:
 
     if count == 9:
         print("НИЧЬЯ")
-        break
+        replay()
+        # break
 
     if check_win():
         turn = 0
         field = [[' '] * 3 for i in range(3)]
-        replay()
+
