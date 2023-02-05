@@ -110,4 +110,3 @@ while True:
     if check_win():
         turn = 0
         field = [[' '] * 3 for i in range(3)]
-
