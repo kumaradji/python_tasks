@@ -343,7 +343,6 @@
 ''' 8 11 -5 -2 8 11 -5
 '''
 
-
 #
 # a = list(map(int, input().split()))
 # c = tuple(a)
@@ -384,3 +383,21 @@
 # print(set_alarm(False, True))
 # print(set_alarm(False, False))
 # print(set_alarm(True, False))
+import time
+
+i = 10
+while i != 0:
+    print(i)
+    # sleep(1)
+    i -= 1
+    print("время вышло")
+
+# print(time.time())
+# print(time.sleep(0))
+# print(time.ctime())
+# print(time.localtime())
+# # print(time.mktime(0))
+# print(time.gmtime())
+# print(time.strptime())
+# print(time.strftime())
+# print(time.asctime())

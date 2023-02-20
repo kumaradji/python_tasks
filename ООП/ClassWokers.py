@@ -1,64 +1,56 @@
-workers = [
-    {
-        "first_name": "Красильников Дмитрий Юрьевич",
-        "address": "ул. Вавиловых, д.11, к.1, кв.193",
-        "phone": "+7(967)5941552",
-        "phone_other": "+7(921)7968873",
-        "mail": "krasilnikovdy@vniig.ru",
-        "post": "заместитель начальника отдела",
-    },
-    {
-        "first_name": "Горшкова Людмила Александровна",
-        "phone": "+7(921)7971243",
-        "phone_other": "",
-        "mail": "gorshkovala@vniig.ru",
-        "post": "и.о. начальника УАО",
-    },
-    {
-        "first_name": "Ващенко Андрей Александрович",
-        "phone": "+7(952)2480824",
-        "mail": "",
-        "phone_other": "",
-        "post": "рабочий по КО и РЗ",
-    },
-    {
-        "first_name": "Детинин Владимир Иванович",
-        "address": "ул. Белы-Куна, д.20 к.3 кв.91",
-        "phone": "+7(921)3049965",
-        "phone_other": "+7(921)3049965",
-        "mail": "detininvi@vniig.ru",
-        "post": "рабочий по КО и РЗ",
-        "birthday": "03 июня 1972"
-    },
-]
+from string import ascii_letters
 
 
 class Vniig:
-    def __init__(self, first_name="", address="", phone="",
-                 phone_other="", mail="", post="", birthday=""):
-        self.first_name = first_name
-        self.address = address
-        self.phone = phone
-        self.phone_other = phone_other
-        self.mail = mail
-        self.post = post
-        self.birthday = birthday
+    S_RUS = 'абвгдеёжзийклмнопрстуфхцчшщьыъэюя-'
+    S_RUS_UPPER = S_RUS.upper()
 
-    def init_from_dict(self, event_dict):
-        self.first_name = event_dict.get("first_name")
-        self.address = event_dict.get("address")
-        self.phone = event_dict.get("phone")
-        self.phone_other = event_dict.get("phone_other")
-        self.mail = event_dict.get("mail")
-        self.post = event_dict.get("post")
-        self.birthday = event_dict.get("birthday")
+    def __init__(self, fio="", phone="", phone_other="",
+                 mail="", post="", birthday=""):
+        # self.verify_fio(fio)
+
+        self.__fio = fio  # .split()  # проверить нужно ли?
+        self.__phone = phone
+        self.__phone_other = phone_other
+        self.__mail = mail
+        self.__post = post
+        self.__birthday = birthday
+
+    @classmethod  # метод для проверки корректности ФИО
+    def verify_fio(cls, fio):
+        if type(fio) != str:
+            raise TypeError("ФИО должно быть строкой")
+
+        f = fio.split()
+        if len(f) != 3:
+            raise TypeError("Неверный формат ФИО")
+
+        letters = ascii_letters + cls.S_RUS + cls.S_RUS_UPPER
+        for s in f:
+            if len(s) < 1:
+                raise TypeError("В ФИО должен быть хотя бы один символ")
+            if len(s.strip(letters)) != 0:
+                raise TypeError("В ФИО должны быть буквы и дефис")
+
+    #
+    @property
+    def get_worker(self):
+
+        def init_from_dict(self, event_dict):
+            self.fio = event_dict.get("fio")
+            self.phone = event_dict.get("phone")
+            self.phone_other = event_dict.get("phone_other")
+            self.mail = event_dict.get("mail")
+            self.post = event_dict.get("post")
+            self.birthday = event_dict.get("birthday")
 
 
 for worker in workers:
     staff = Vniig()
     staff.init_from_dict(worker)
-    print(staff.first_name)
+    print(staff.fio)
     print(staff.post)
-    print(staff.address)
     print(staff.birthday)
     print('-       ---       -')
+
+# p = Vniig("Кольцов Сергей Викторович")
